@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "李彩霞 | AI应用开发作品集",
-  description: "AI应用开发工程师作品集 - 多Agent架构、RAG检索、语言学习智能体",
+  title: "李彩霞 | AI 产品助理作品集",
+  description: "AI 产品助理作品集 - 需求定义、场景拆解、Agent 与 RAG 应用设计",
 };
 
 export default function RootLayout({

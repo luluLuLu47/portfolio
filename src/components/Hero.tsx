@@ -7,17 +7,17 @@ export default function Hero() {
           {/* Left: Name + title */}
           <div>
             <h1 className="text-2xl font-bold text-[#1a202c] mb-1">李彩霞</h1>
-            <p className="text-[#4a6fa5] font-medium text-sm mb-3">AI 应用开发工程师</p>
+            <p className="text-[#4a6fa5] font-medium text-sm mb-3">AI 产品助理</p>
             <p className="text-gray-500 text-sm leading-relaxed max-w-md">
               软件工程本科 · GPA 3.72（专业前10%）
               <br />
-              擅长多 Agent 架构设计与 RAG 检索增强生成
+              专注 AI 产品的需求定义、场景拆解与方案落地
             </p>
           </div>
 
           {/* Right: Quick tags */}
           <div className="flex flex-wrap gap-2 justify-end max-w-[280px]">
-            {["ReAct 多Agent", "RAG检索", "LangChain", "Next.js", "Docker", "Python"].map((tag) => (
+            {["需求分析", "PRD 撰写", "Agent 场景设计", "Prompt 设计", "RAG 应用", "效果评估"].map((tag) => (
               <span
                 key={tag}
                 className="px-3 py-1 text-xs rounded-md bg-[#eef2f7] text-[#4a6fa5] border border-[#dde5f0]"

@@ -33,7 +33,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-200 pt-4 text-center">
           <p className="text-[10px] text-gray-400">
-            © 2026 李彩霞 · AI应用开发作品集 · Built with Next.js
+            © 2026 李彩霞 · AI 产品助理作品集 · Built with Next.js
           </p>
         </div>
       </div>

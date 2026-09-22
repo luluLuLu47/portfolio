@@ -1,33 +1,33 @@
 export default function SkillsMatrix() {
   const categories = [
     {
-      title: "AI 应用开发",
+      title: "产品能力",
       skills: [
-        { name: "ReAct / 双Agent推理", level: "精通", highlighted: true },
-        { name: "RAG检索 (Vector+FTS5+RRF)", level: "精通", highlighted: true },
-        { name: "LangChain", level: "熟悉" },
-        { name: "MCP 协议扩展", level: "熟悉" },
+        { name: "需求分析与拆解", level: "精通", highlighted: true },
+        { name: "PRD / 需求文档撰写", level: "精通", highlighted: true },
+        { name: "用户场景与流程设计", level: "熟悉" },
+        { name: "数据指标与效果评估", level: "熟悉" },
+        { name: "竞品调研与方案取舍", level: "了解" },
+      ],
+    },
+    {
+      title: "AI 应用设计",
+      skills: [
+        { name: "Agent 场景设计与编排", level: "精通", highlighted: true },
         { name: "Prompt Engineering", level: "精通", highlighted: true },
+        { name: "RAG 应用设计", level: "精通", highlighted: true },
+        { name: "模型能力边界判断", level: "熟悉" },
+        { name: "LangChain / MCP", level: "熟悉" },
       ],
     },
     {
-      title: "全栈开发",
+      title: "工程与协作",
       skills: [
+        { name: "原型与交互实现", level: "熟悉" },
+        { name: "Python / SQL", level: "熟悉" },
         { name: "Next.js / React", level: "熟悉" },
-        { name: "TypeScript", level: "熟悉" },
-        { name: "Python", level: "熟悉" },
-        { name: "SQLite / MySQL", level: "熟悉" },
-        { name: "SSE 流式输出", level: "熟悉" },
-      ],
-    },
-    {
-      title: "部署与运维",
-      skills: [
-        { name: "Git 版本控制", level: "熟悉" },
-        { name: "Docker 容器化", level: "熟悉" },
-        { name: "Nginx 反向代理", level: "熟悉" },
-        { name: "Linux 服务器", level: "了解" },
-        { name: "CI/CD 流水线", level: "了解" },
+        { name: "跨职能协作沟通", level: "熟悉" },
+        { name: "Git / Docker", level: "了解" },
       ],
     },
   ];
@@ -36,7 +36,7 @@ export default function SkillsMatrix() {
     <section id="skills" className="border-b border-gray-200 bg-white scroll-mt-20">
       <div className="max-w-4xl mx-auto px-6 py-16">
         <h2 className="text-2xl font-bold mb-2 text-[#1a202c]">技能矩阵</h2>
-        <p className="text-gray-500 mb-10 text-sm">技术能力按岗位适配方向分组</p>
+        <p className="text-gray-500 mb-10 text-sm">能力按 AI 产品助理岗位需求分组</p>
 
         <div className="grid md:grid-cols-3 gap-6">
           {categories.map((cat) => (

@@ -232,9 +232,10 @@ export default function Home() {
           placeholder={{
             title: "待补充素材",
             items: [
-              "GitHub 仓库链接（已有：luluLuLu47/lv-sales-training-agent）",
+              "需求分析文档（已有 docx 理解稿，待转成页面内可展开/PDF）",
               "项目运行录屏视频（真实运行+声音）",
               "功能截图 3-4 张",
+              "源码仓库已设为私有，面试可现场演示",
             ],
           }}
         />
@@ -262,9 +263,10 @@ export default function Home() {
           placeholder={{
             title: "待补充素材",
             items: [
-              "GitHub 仓库链接",
+              "需求分析文档（已有 docx 理解稿，待转成页面内可展开/PDF）",
               "功能截图",
               "演示视频",
+              "源码仓库已设为私有，面试可现场演示",
             ],
           }}
         />
