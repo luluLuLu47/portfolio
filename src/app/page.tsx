@@ -202,7 +202,47 @@ export default function Home() {
           ]}
           techStack={["Next.js 15", "React 19", "TypeScript", "Tailwind CSS", "Web Speech API", "SQLite"]}
           videoSrc="/videos/linguamind-demo.mp4"
-          videoNote="概念演示动画（基于项目UI用Remotion渲染）"
+          videoNote="概念演示动画（基于项目 UI 用 Remotion 渲染，非真实运行录屏）"
+          videoEmbed={null}
+          docUrl={null}
+          requirementDoc={[
+            {
+              title: "问题定义：现有语言学习工具的三类短板",
+              points: [
+                "题库型 App（多邻国、百词斩）：基于固定题库，只能做预设练习，无法自由表达，缺乏真实语境",
+                "词典/资料型（有道、沪江）：单向知识输入，无交互与反馈，效果完全依赖用户自律",
+                "通用 AI 聊天（ChatGPT）：能对话但非教学导向 —— 不判断用户水平、不懂何时纠错、缺乏教学策略",
+              ],
+            },
+            {
+              title: "目标用户与核心需求",
+              points: [
+                "真实语境练习：在点餐、问路、面试等真实场景中使用语言，而不是背单词",
+                "即时且友好的反馈：说错了被温柔指出，而不是被打击信心",
+                "自适应难度：初学者与进阶者需要不同深度的对话与讲解",
+                "多语言支持：同时学多门语言（英+韩+日）的用户希望在一个平台完成",
+                "灵活的学习时间：随时随地可练，不需要约外教",
+              ],
+            },
+            {
+              title: "需求拆解：MVP 功能模块",
+              points: [
+                "发音入门：英语 48 音标 / 韩语 40 字母，可点击发音 + 跟读",
+                "单词学习：按主题动态生成 10-15 词，含音标、释义、AI 例句与发音",
+                "句型跟读 + AI 情境对话：在真实场景中练习并即时纠错",
+                "自由对话与听力训练",
+                "学习仪表盘：进度、热力图、弱点分析",
+              ],
+            },
+            {
+              title: "关键取舍",
+              points: [
+                "不做通用聊天机器人，改做「有教学策略的语言私教」：双 Agent 架构，一个负责对话生成，一个负责纠错评估，解决「何时纠错」的教学策略问题",
+                "不做单语言产品：采用全局语言切换 + 各语言数据隔离，先做英/韩两语验证框架可迁移性，再横向扩展",
+                "语音能力选 Whisper + Edge-TTS 而非付费方案：多语言支持好且零成本，先跑通链路再谈替换",
+              ],
+            },
+          ]}
           githubUrl={null}
           demoUrl={null}
           architectureSvg={linguamindArchitecture}
@@ -226,6 +266,8 @@ export default function Home() {
           techStack={["Python", "LangChain", "ReAct Agent", "RAG (Vector+FTS5+RRF)", "SQLite", "Docker", "Nginx"]}
           videoSrc={null}
           videoNote={null}
+          videoEmbed={null}
+          docUrl={null}
           githubUrl={null}
           demoUrl={null}
           architectureSvg={lvArchitecture}
@@ -257,6 +299,8 @@ export default function Home() {
           techStack={["Python", "NLP", "知识图谱", "对话系统"]}
           videoSrc={null}
           videoNote={null}
+          videoEmbed={null}
+          docUrl={null}
           githubUrl={null}
           demoUrl={null}
           architectureSvg={dialectArchitecture}

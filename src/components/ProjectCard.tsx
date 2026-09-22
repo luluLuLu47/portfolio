@@ -18,11 +18,21 @@ interface ProjectCardProps {
   techStack: string[];
   videoSrc: string | null;
   videoNote: string | null;
+  videoEmbed: string | null;
+  requirementDoc?: RequirementSection[];
+  docUrl: string | null;
   githubUrl: string | null;
   demoUrl: string | null;
   placeholder?: Placeholder;
   architectureSvg?: React.ReactNode;
 }
+
+interface RequirementSection {
+  title: string;
+  points: string[];
+}
+
+const BASE = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export default function ProjectCard({
   id,
@@ -35,6 +45,9 @@ export default function ProjectCard({
   techStack,
   videoSrc,
   videoNote,
+  videoEmbed,
+  requirementDoc,
+  docUrl,
   githubUrl,
   demoUrl,
   placeholder,
@@ -83,6 +96,42 @@ export default function ProjectCard({
           {/* Description */}
           <p className="text-gray-600 leading-relaxed text-sm mb-5">{description}</p>
 
+          {/* Requirement Analysis */}
+          {requirementDoc && requirementDoc.length > 0 && (
+            <div className="mb-5 rounded-md border border-[#dde5f0] bg-[#fbfcfe] p-4">
+              <div className="flex items-center justify-between mb-3">
+                <h4 className="text-xs font-semibold text-[#4a6fa5] uppercase tracking-wide">
+                  需求分析
+                </h4>
+                {docUrl && (
+                  <a
+                    href={`${BASE}${docUrl}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[10px] px-2 py-1 rounded border border-[#dde5f0] text-[#4a6fa5] hover:bg-[#eef2f7] transition-colors"
+                  >
+                    完整需求文档 PDF ↓
+                  </a>
+                )}
+              </div>
+              <div className="space-y-3.5">
+                {requirementDoc.map((sec) => (
+                  <div key={sec.title}>
+                    <p className="text-xs font-medium text-[#1a202c] mb-1.5">{sec.title}</p>
+                    <ul className="space-y-1">
+                      {sec.points.map((p, i) => (
+                        <li key={i} className="flex items-start gap-1.5 text-xs text-gray-600 leading-relaxed">
+                          <span className="text-[#4a6fa5] mt-0.5">·</span>
+                          <span>{p}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Architecture Diagram */}
           {architectureSvg && (
             <div className="mb-5">
@@ -121,20 +170,33 @@ export default function ProjectCard({
             </div>
           </div>
 
-          {/* Video */}
-          {videoSrc ? (
+          {/* Video: 本地 mp4 或 B站/YouTube 嵌入 */}
+          {(videoSrc || videoEmbed) && (
             <div className="mb-5">
               <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-2">演示视频</h4>
-              <video
-                src={videoSrc}
-                controls
-                className="w-full rounded-md border border-gray-200"
-              />
+              {videoEmbed ? (
+                <div className="relative w-full overflow-hidden rounded-md border border-gray-200" style={{ paddingTop: "56.25%" }}>
+                  <iframe
+                    src={videoEmbed}
+                    className="absolute top-0 left-0 w-full h-full"
+                    scrolling="no"
+                    frameBorder="0"
+                    allowFullScreen
+                  />
+                </div>
+              ) : (
+                <video
+                  src={`${BASE}${videoSrc}`}
+                  controls
+                  preload="metadata"
+                  className="w-full rounded-md border border-gray-200"
+                />
+              )}
               {videoNote && (
                 <p className="text-[10px] text-gray-400 mt-1.5">⚠️ {videoNote}</p>
               )}
             </div>
-          ) : null}
+          )}
 
           {/* Placeholder for missing assets */}
           {placeholder && (
