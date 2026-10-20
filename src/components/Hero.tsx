@@ -2,8 +2,8 @@ export default function Hero() {
   return (
     <header className="border-b border-gray-200 bg-white">
       {/* Top bar */}
-      <div className="max-w-4xl mx-auto px-6 py-12">
-        <div className="flex items-start justify-between gap-8">
+      <div className="max-w-4xl mx-auto px-6 py-8">
+        <div className="flex items-center justify-between gap-8">
           {/* Left: Name + title */}
           <div>
             <h1 className="text-2xl font-bold text-[#1a202c] mb-1">李彩霞</h1>
@@ -27,16 +27,6 @@ export default function Hero() {
             ))}
           </div>
         </div>
-
-        {/* Navigation */}
-        <nav className="flex gap-6 mt-8 pt-6 border-t border-gray-100 text-sm">
-          <a href="#skills" className="text-gray-600 hover:text-[#4a6fa5] transition-colors">
-            技能矩阵
-          </a>
-          <a href="#projects" className="text-gray-600 hover:text-[#4a6fa5] transition-colors">
-            项目作品
-          </a>
-        </nav>
       </div>
     </header>
   );

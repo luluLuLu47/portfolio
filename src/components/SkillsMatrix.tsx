@@ -34,20 +34,22 @@ export default function SkillsMatrix() {
 
   return (
     <section id="skills" className="border-b border-gray-200 bg-white scroll-mt-20">
-      <div className="max-w-4xl mx-auto px-6 py-10">
-        <h2 className="text-xl font-bold mb-1.5 text-[#1a202c]">技能矩阵</h2>
-        <p className="text-gray-500 mb-6 text-sm">能力按 AI 产品助理岗位需求分组</p>
+      <div className="max-w-4xl mx-auto px-6 py-6">
+        <div className="flex items-baseline gap-3 mb-4">
+          <h2 className="text-lg font-bold text-[#1a202c]">技能矩阵</h2>
+          <p className="text-gray-400 text-xs">能力按 AI 产品助理岗位需求分组</p>
+        </div>
 
-        <div className="grid md:grid-cols-3 gap-4">
+        <div className="grid md:grid-cols-3 gap-3">
           {categories.map((cat) => (
             <div
               key={cat.title}
-              className="rounded-lg border border-gray-200 bg-[#f8f9fa] p-4"
+              className="rounded-lg border border-gray-200 bg-[#f8f9fa] px-3.5 py-3"
             >
-              <h3 className="text-sm font-semibold text-[#1a202c] mb-3 pb-2 border-b border-gray-200">
+              <h3 className="text-sm font-semibold text-[#1a202c] mb-2 pb-1.5 border-b border-gray-200">
                 {cat.title}
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-1.5">
                 {cat.skills.map((skill) => (
                   <li key={skill.name} className="flex items-center justify-between text-xs">
                     <span
