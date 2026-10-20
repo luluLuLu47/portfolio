@@ -3,8 +3,8 @@ export default function SkillsMatrix() {
     {
       title: "产品能力",
       skills: [
-        { name: "需求分析与拆解", level: "精通", highlighted: true },
-        { name: "PRD / 需求文档撰写", level: "精通", highlighted: true },
+        { name: "需求分析与拆解", level: "熟练", highlighted: true },
+        { name: "PRD / 需求文档撰写", level: "熟练", highlighted: true },
         { name: "用户场景与流程设计", level: "熟悉" },
         { name: "数据指标与效果评估", level: "熟悉" },
         { name: "竞品调研与方案取舍", level: "了解" },
@@ -13,9 +13,9 @@ export default function SkillsMatrix() {
     {
       title: "AI 应用设计",
       skills: [
-        { name: "Agent 场景设计与编排", level: "精通", highlighted: true },
-        { name: "Prompt Engineering", level: "精通", highlighted: true },
-        { name: "RAG 应用设计", level: "精通", highlighted: true },
+        { name: "Agent 场景设计与编排", level: "熟练", highlighted: true },
+        { name: "Prompt Engineering", level: "熟练", highlighted: true },
+        { name: "RAG 应用设计", level: "熟练", highlighted: true },
         { name: "模型能力边界判断", level: "熟悉" },
         { name: "LangChain / MCP", level: "熟悉" },
       ],
@@ -64,7 +64,7 @@ export default function SkillsMatrix() {
                     </span>
                     <span
                       className={
-                        skill.level === "精通"
+                        skill.level === "熟练"
                           ? "px-2 py-0.5 text-[10px] rounded bg-[#4a6fa5]/10 text-[#4a6fa5] border border-[#4a6fa5]/20"
                           : skill.level === "熟悉"
                           ? "px-2 py-0.5 text-[10px] rounded bg-gray-100 text-gray-500 border border-gray-200"

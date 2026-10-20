@@ -243,7 +243,7 @@ export default function Home() {
       id: "linguamind",
       title: "LinguaMind 语言学习智能体",
       subtitle: "AI 驱动的多语言学习平台",
-      status: "开发中",
+      status: "已完成",
       tags: ["Next.js", "React", "TypeScript", "AI Agent", "TTS"],
       description:
         "LinguaMind 是一个基于 AI 的多语言学习平台，支持英语和韩语学习。核心功能包括 AI 对话练习、每日挑战、单词学习、发音训练和学习进度分析。采用双 Agent 架构，通过对话式交互帮助用户在真实场景中掌握语言。",
@@ -328,30 +328,6 @@ export default function Home() {
       architectureSvg: lvArchitecture,
     },
     {
-      id: "dialect",
-      title: "基于知识图谱的四川方言文本对话系统",
-      subtitle: "NLP + 知识图谱的方言理解与对话",
-      status: "开发中",
-      tags: ["NLP", "知识图谱", "对话系统", "方言处理"],
-      description:
-        "面向四川方言的自然语言理解与对话系统，通过构建方言知识图谱，实现方言词汇识别、语义理解和对话生成。探索方言保护与数字化传承的技术路径。",
-      features: [
-        "方言知识图谱构建：词汇关系、语义网络",
-        "方言文本识别与标准化转换",
-        "基于知识图谱的对话生成",
-        "方言-普通话双向翻译",
-      ],
-      techStack: ["Python", "NLP", "知识图谱", "对话系统"],
-      videoSrc: null,
-      videoPoster: null,
-      videoEmbed: null,
-      videoNote: null,
-      docUrl: null,
-      githubUrl: null,
-      demoUrl: null,
-      architectureSvg: dialectArchitecture,
-    },
-    {
       id: "gamespec",
       title: "Gamespec 小游戏生成多智能体系统",
       subtitle: "自然语言创意 → 5 个 Agent 协作 → 可运行 HTML5 小游戏",
@@ -403,6 +379,9 @@ export default function Home() {
     hasDoc: !!p.requirementDoc?.length,
     hasArch: !!p.architectureSvg,
     hasVideo: !!(p.videoSrc || p.videoEmbed),
+    videoSrc: p.videoSrc,
+    videoPoster: p.videoPoster,
+    videoNote: p.videoNote,
   }));
 
   const visible = showAll ? entries : entries.slice(0, 3);

@@ -11,6 +11,9 @@ export interface ProjectEntry {
   hasDoc: boolean;
   hasArch: boolean;
   hasVideo: boolean;
+  videoSrc: string | null;
+  videoPoster: string | null;
+  videoNote: string | null;
 }
 
 export default function ProjectCard({
@@ -23,7 +26,6 @@ export default function ProjectCard({
   const entries: { tab: ProjectTab; label: string; enabled: boolean }[] = [
     { tab: "doc", label: "需求文档", enabled: project.hasDoc },
     { tab: "arch", label: "项目架构", enabled: project.hasArch },
-    { tab: "video", label: "演示视频", enabled: project.hasVideo },
     { tab: "detail", label: "功能与技术", enabled: true },
   ];
 
@@ -51,6 +53,22 @@ export default function ProjectCard({
           </span>
         ))}
       </div>
+
+      {/* 演示视频 —— 直接内嵌展示，点开即播，无需二次点击 */}
+      {project.videoSrc && (
+        <div className="mb-4">
+          <video
+            src={project.videoSrc}
+            poster={project.videoPoster ?? undefined}
+            controls
+            preload="metadata"
+            className="w-full rounded-md border border-gray-200"
+          />
+          {project.videoNote && (
+            <p className="text-[10px] text-gray-400 mt-1.5">{project.videoNote}</p>
+          )}
+        </div>
+      )}
 
       {/* 入口行 —— 点进去查看对应内容 */}
       <div className="mt-auto pt-3 border-t border-gray-100">
