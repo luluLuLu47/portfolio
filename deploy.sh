@@ -8,6 +8,8 @@ set -e
 
 REPO_DIR="/d/project/portfolio"
 REMOTE="https://github.com/luluLuLu47/portfolio.git"
+# HTTPS 被墙/断连时的备用通道（SSH over 443，实测可用）
+REMOTE_SSH="ssh://git@ssh.github.com:443/luluLuLu47/portfolio.git"
 TMP_DIR="/tmp/pfpages"
 
 echo ">>> 1/4 构建静态站点"
@@ -27,7 +29,11 @@ git add -A
 git -c user.name="luluLuLu47" -c user.email="liamlx@outlook.com" \
     commit -q -m "deploy: 更新作品集站点 $(date '+%Y-%m-%d %H:%M')"
 git remote add origin "$REMOTE" 2>/dev/null || git remote set-url origin "$REMOTE"
-git push origin gh-pages --force
+git push origin gh-pages --force || {
+  echo ">>> HTTPS 推送失败，切换 SSH 443 通道重试"
+  git remote set-url origin "$REMOTE_SSH"
+  git push origin gh-pages --force
+}
 
 echo ">>> 4/4 完成"
 echo "线上地址：https://lulululu47.github.io/portfolio/"

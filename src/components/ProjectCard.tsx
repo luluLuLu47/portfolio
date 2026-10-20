@@ -58,8 +58,12 @@ export default function ProjectCard({
       {project.videoSrc && (
         <div className="mb-4">
           <video
-            src={project.videoSrc}
-            poster={project.videoPoster ?? undefined}
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${project.videoSrc}`}
+            poster={
+              project.videoPoster
+                ? `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${project.videoPoster}`
+                : undefined
+            }
             controls
             preload="metadata"
             className="w-full rounded-md border border-gray-200"
