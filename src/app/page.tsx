@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Hero from "@/components/Hero";
-import SkillsMatrix from "@/components/SkillsMatrix";
+import DocsSection from "@/components/DocsSection";
 import ProjectCard, { type ProjectEntry } from "@/components/ProjectCard";
 import ProjectModal, { type ProjectDetail, type ProjectTab } from "@/components/ProjectModal";
 import Footer from "@/components/Footer";
@@ -435,31 +435,20 @@ export default function Home() {
     <main className="min-h-screen bg-[#f8f9fa] text-[#2d3748]">
       <Hero />
 
-      {/* Skills Matrix */}
-      <SkillsMatrix />
-
-      {/* 项目集 —— 3 列网格 + 查看更多 */}
-      <section id="projects" className="max-w-5xl mx-auto px-6 py-16 scroll-mt-20">
-        <h2 className="text-2xl font-bold mb-2 text-[#1a202c]">项目集</h2>
-        <p className="text-gray-500 mb-10 text-sm">点击项目下方的入口，查看需求文档、项目架构与演示视频</p>
+      {/* 项目集 —— 3 列网格 */}
+      <section id="projects" className="max-w-5xl mx-auto px-6 py-10 scroll-mt-20">
+        <h2 className="text-xl font-bold mb-1.5 text-[#1a202c]">项目集</h2>
+        <p className="text-gray-500 mb-6 text-sm">点击项目下方的入口，查看需求文档、项目架构与演示视频</p>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-5">
           {visible.map((entry) => (
             <ProjectCard key={entry.id} project={entry} onOpen={openProject} />
           ))}
         </div>
-
-        {!showAll && entries.length > 3 && (
-          <div className="text-center mt-10">
-            <button
-              onClick={() => setShowAll(true)}
-              className="px-6 py-2.5 rounded-md border border-[#c9d7e8] bg-white text-sm text-[#4a6fa5] hover:bg-[#f6f9fc] transition-colors"
-            >
-              查看更多项目（还有 {entries.length - 3} 个）↓
-            </button>
-          </div>
-        )}
       </section>
+
+      {/* 原型设计与文档写作 */}
+      <DocsSection />
 
       {/* Footer */}
       <Footer />

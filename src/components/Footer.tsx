@@ -7,7 +7,7 @@ export default function Footer() {
           <div>
             <h4 className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-3">联系方式</h4>
             <ul className="space-y-1.5 text-xs text-gray-600">
-              <li>邮箱：<a href="mailto:liamlx@outlook.com" className="hover:text-[#4a6fa5] transition-colors">liamlx@outlook.com</a></li>
+              <li>邮箱：<a href="mailto:2191147639@qq.com" className="hover:text-[#4a6fa5] transition-colors">2191147639@qq.com</a></li>
               <li>电话：19181776212</li>
             </ul>
           </div>
